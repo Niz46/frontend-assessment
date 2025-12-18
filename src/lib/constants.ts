@@ -21,3 +21,9 @@ export const tabs: { id: TabId; label: string }[] = [
   { id: 'cashToCrypto', label: 'Cash to crypto' },
   { id: 'cryptoLoan', label: 'Crypto to fiat loan' },
 ];
+
+export const networkOptions: Option[] = [
+  { id: 'eth', label: 'Ethereum', icon: '/assets/ETH.png' },
+  { id: 'btc', label: 'Bitcoin', icon: '/assets/BTC.png' },
+  { id: 'usdt', label: 'USDT', icon: '/assets/coin.png' },
+];
