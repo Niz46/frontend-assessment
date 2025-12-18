@@ -6,3 +6,9 @@ export const sanitizeNumberInput = (v: string) => {
   // keep only first dot and up to 8 decimals
   return `${parts[0].slice(0, 10)}.${parts.slice(1).join('').slice(0, 8)}`;
 };
+
+export function formatEth(value: number) {
+  if (!Number.isFinite(value)) return '0';
+  if (Number.isInteger(value)) return String(value);
+  return value.toFixed(6).replace(/\.?0+$/, '');
+}

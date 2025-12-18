@@ -1,6 +1,8 @@
+// src/app/layout.tsx
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import '../styles/globals.css';
+import PageNav from '@components/ui/PageNav';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,7 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* black background + centered container used by all pages */}
+        <main className="min-h-screen bg-black flex items-center justify-center p-6">
+          {/* The white rounded parent container that holds the shared PageNav */}
+          <div>
+            {/* Parent navbar for all pages */}
+            <PageNav />
+
+            {/* Page content will render below the navbar */}
+            <div className="mt-6">{children}</div>
+          </div>
+        </main>
+      </body>
     </html>
   );
 }
