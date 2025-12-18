@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* design tokens */
+:root {
+  --card-border: #ccf6e5;
+  --inner-border: #e0e0e0;
+  --accent: #013941;
+}
+body {
+  @apply bg-slate-900 font-sans;
+}
